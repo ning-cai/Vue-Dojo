@@ -19,17 +19,13 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="title">{{ message }}</div>
+    <div id="hover">
+      <span v-bind:title="label">Hover a few seconds to see what happens</span>
+    </div>
 
     <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script>
-      var app = new Vue({
-        el: "#app",
-        data: {
-          message: "Hello Vue."
-        }
-      });
-    </script>
+    <script src="helloVue.js"></script>
   </body>
 </html>
