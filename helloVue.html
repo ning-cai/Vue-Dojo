@@ -23,6 +23,19 @@
     <div id="hover">
       <span v-bind:title="label">Hover a few seconds to see what happens</span>
     </div>
+    <div id="app-if"><span v-if="display">Now you see me</span></div>
+    <div id="app-for">
+      <h4>My Todo List:</h4>
+      <ol>
+        <li v-for="el in todos">{{ el.text }}</li>
+      </ol>
+    </div>
+    <div id="app-on">
+      <h4>{{ message }}</h4>
+      <button class="btn btn-primary" v-on:click="reverseMessage">
+        Reverse
+      </button>
+    </div>
 
     <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
