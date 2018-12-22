@@ -44,3 +44,20 @@ const appOn = new Vue({
     }
   }
 });
+
+Vue.component("shopping-list", {
+  props: ["elem"],
+  template: "<li>{{elem.item}}</li>"
+});
+
+const appComponent = new Vue({
+  el: "#component",
+  data: {
+    label: "Grocery shopping list:",
+    shoppingList: [
+      { id: 0, item: "Chinakohl" },
+      { id: 1, item: "Lauch" },
+      { id: 2, item: "Hackfleisch" }
+    ]
+  }
+});

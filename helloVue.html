@@ -15,7 +15,6 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
-
     <title>Hello, world!</title>
   </head>
   <body>
@@ -36,7 +35,17 @@
         Reverse
       </button>
     </div>
-
+    <!-- Vue Components -->
+    <div id="component">
+      <h4>{{ label }}</h4>
+      <ol>
+        <shopping-list
+          v-for="element in shoppingList"
+          v-bind:elem="element"
+          v-bind:key="element.id"
+        ></shopping-list>
+      </ol>
+    </div>
     <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="helloVue.js"></script>
