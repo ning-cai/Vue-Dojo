@@ -61,3 +61,22 @@ const appComponent = new Vue({
     ]
   }
 });
+
+// Review Vue.js Introduction
+Vue.component("tool", { props: ["elem"], template: "<li>{{elem.name}}</li>}" });
+
+const reviewApp = new Vue({
+  el: "#app",
+  data: {
+    tools: [
+      { id: 0, name: "VSCode" },
+      { id: 1, name: "IntelliJ" },
+      { id: 2, name: "Chrome" }
+    ]
+  },
+  methods: {
+    addFiddler: function() {
+      this.tools.push({ id: 3, name: "Fiddler" });
+    }
+  }
+});
