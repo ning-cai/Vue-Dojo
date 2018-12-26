@@ -1,7 +1,15 @@
-.product-red {
+.black {
+  fill: black;
+}
+
+.blue {
+  fill: blue;
+}
+
+.red {
   fill: red;
 }
 
-.product-blue {
-  fill: blue;
+.purple {
+  fill: purple;
 }
