@@ -24,17 +24,27 @@ Vue.component("backpack-svg", {
             </div>`
 });
 
-Vue.component("color-variant", {
+Vue.component("test", {
   props: {
-    color: {
-      type: String,
-      required: true
+    colors: {
+      type: Array,
+      required: false
     }
   },
-  template: `<div><button class="badge badge-dark" v-on:click="onColorClick">{{color}}</button></div>`,
+  template: `<div><ol><li v-for="color in colors" v-bind:colors="colors">{{color}}</li></ol></div>`
+});
+
+Vue.component("color-variant", {
+  props: {
+    colors: {
+      type: Array,
+      required: false
+    }
+  },
+  template: `<div><ul><li v-for="color in colors" v-bind:colors="colors"><button class="badge badge-dark" v-on:click="onColorClick">{{color}}</button></li></ul></div>`,
   methods: {
     onColorClick: function() {
-      this.color = "changed";
+      console.log("$emit");
     }
   }
 });
@@ -44,11 +54,7 @@ const app = new Vue({
   data: {
     description: ["100% Cotton", "Extra Warm"],
     availableColors: ["black", "blue", "red", "purple"],
+    colors: [{ id: 0, name: "black" }, { id: 1, name: "red" }],
     selectedColor: "black"
-  },
-  methods: {
-    changeColor: function(color) {
-      this.selectedColor = color;
-    }
   }
 });

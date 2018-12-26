@@ -63,11 +63,8 @@
       <div class="col-lg-2"></div>
       <div class="col-lg-8">
         <div id="app" class="row">
-          <backpack-svg :color="'product-red'"></backpack-svg>
-          <color-variant :color="'black'"></color-variant>
-          <color-variant :color="'blue'"></color-variant>
-          <color-variant :color="'red'"></color-variant>
-          <color-variant :color="'purple'"></color-variant>
+          <backpack-svg v-bind:color="'product-red'"></backpack-svg>
+          <color-variant v-bind:colors="availableColors"></color-variant>
         </div>
       </div>
       <div class="col-lg-2"></div>
