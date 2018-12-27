@@ -45,10 +45,20 @@ Vue.component("color-variant", {
   }
 });
 
+Vue.component("product-description", {
+  props: {
+    descriptions: {
+      type: Array,
+      required: true
+    }
+  },
+  template: `<div><ul><li v-for="description in descriptions" v-bind:descriptions="descriptions">{{description}}</li><ul></div>`
+});
+
 const app = new Vue({
   el: "#app",
   data: {
-    description: ["100% Cotton", "Extra Warm"],
+    descriptions: ["100% Cotton", "Extra Warm", "Waterproof"],
     availableColors: ["black", "blue", "red", "purple"],
     colors: [{ id: 0, name: "black" }, { id: 1, name: "red" }],
     selectedColor: "black"
